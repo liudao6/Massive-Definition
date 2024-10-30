@@ -1,11 +1,11 @@
 {
-  "name": "plugin-sample-vite-svelte",
-  "version": "0.3.6",
+  "name": "Massive-Defintion",
+  "version": "0.0.1",
   "type": "module",
-  "description": "This is a sample plugin based on vite and svelte for Siyuan (https://b3log.org/siyuan)",
+  "description": "自己使用的巨量插件，为自己的工作流服务",
   "repository": "",
   "homepage": "",
-  "author": "frostime",
+  "author": "Ethan",
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development VITE_SOURCEMAP=inline vite build --watch",
@@ -33,5 +33,8 @@
     "vite": "^5.2.9",
     "vite-plugin-static-copy": "^1.0.2",
     "vite-plugin-zip-pack": "^1.0.5"
+  },
+  "dependencies": {
+    "pnpm": "^9.12.3"
   }
 }
