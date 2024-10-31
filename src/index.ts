@@ -156,8 +156,15 @@ export default class PluginSample extends Plugin {
         const divs = element.getElementsByTagName('div');
         for (const div of Array.from(divs)) {
             const text = div.textContent?.trim().toLowerCase() || '';
-            if (text.startsWith('kps:') || text.startsWith('kps：') || 
-                text.startsWith('kps:') || text.startsWith('kps：')) {
+             // 检查是否包含高亮的关键字
+            const hasKeyword = text.startsWith('kps:') || text.startsWith('kps：');
+            
+            // 判断是否为被引用前的dom或被引用后的dom
+            const isReferenced = div.hasAttribute('refcount');
+            const isNotBlockRef = !div.querySelector('[data-type="block-ref"]');
+
+            // 如果包含关键词，并且符合条件，则高亮
+            if (hasKeyword && (isReferenced || isNotBlockRef)) {
                 div.classList.add('kps-highlight');
             }
         }
